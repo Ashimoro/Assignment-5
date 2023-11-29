@@ -1,8 +1,8 @@
 Starter starter_screen;
 player_ship pship;
 grid grid;
-
-//   30(enemy ships), 33
+//skills that are done: 1, 2, 3, 4, 5, 9, 10, 11, 15, 18, 20, 30(player ship)
+//skills that are not done:  30(enemy ships), 33(comet)
 
 float space_check=0;
 int nstars = 3;
