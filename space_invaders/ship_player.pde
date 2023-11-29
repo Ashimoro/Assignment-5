@@ -11,8 +11,12 @@ class player_ship{
     rect(x-15,y,30,30);  
     
     
-  x = constrain(x, 30, width-30); 
-
+    if (x == width) {
+     x -= 10;
+    } else if (x <= 0) {
+     x += 10;
+    }
+  
 }
   
   
