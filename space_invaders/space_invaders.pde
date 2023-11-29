@@ -9,8 +9,9 @@ lives lives;
 //skills that are not done:  30(enemy ships), 33(comet)
 
 //milestone 2:
-//Skills that are done: 6,7,8,12,13,14,16,17
-//Skills that I'm not sure if about: 21
+//Skills that are done: 6,7,8,12,13,14,16,17,28,29,34,35
+//Skills that I'm not sure about: 21, 24, (I want to ask about 34 and 35 as well)
+//Ask about lives_check() function
 
 float space_check=0;
 int nstars = 3;
@@ -27,21 +28,9 @@ void setup() {
   pship = new player_ship(width/2, height-50);
   grid = new grid (10,14,80);
 
-  eship1 = new enemy_ship[15];
-  for (int i = 0; i < eship1.length; i++){
-    eship_x = i*30;
-    eship_speed = 20;
-    eship1[i] = new enemy_ship(eship_x,eship_y1,eship_speed);
-  }
-  
-  eship2 = new enemy_ship[15];
-  for (int i = 0; i < eship2.length; i++){
-    eship_x = i*30;
-    eship_speed = 20;
-    eship2[i] = new enemy_ship(eship_x,eship_y2,eship_speed);
-  }
-
   lives = new lives(3);
+  
+  resetEShips();
 
 }
 
@@ -104,10 +93,29 @@ void play(){
   }
   
 }
-
+void resetEShips(){
+   eship1 = new enemy_ship[15];
+  for (int i = 0; i < eship1.length; i++){
+    eship_x = i*30;
+    eship_speed = 20;
+    eship1[i] = new enemy_ship(eship_x,eship_y1,eship_speed);
+    
+    
+  }
+  
+  eship2 = new enemy_ship[15];
+  for (int i = 0; i < eship2.length; i++){
+    eship_x = i*30;
+    eship_speed = 20;
+    eship2[i] = new enemy_ship(eship_x,eship_y2,eship_speed);
+  } 
+  
+}
 
 void lives_check(){
-  if (eship_y1 > height-50 || eship_y2 > height-50) {
-    lives.decrease(); 
+  if (eship_y1 > height/2) {
+      //lives.decrease(); I'm not sure why this function is not working.
+      //resetEShips(); I think, this is happening because program thinks, that y coordinate is not moving, bacause when I'm changing > to < it's working.
+    println("test test");
   }
 }
