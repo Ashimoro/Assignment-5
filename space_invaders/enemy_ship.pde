@@ -1,3 +1,4 @@
+lives lives2;
 class enemy_ship{
   float ex,ey,espeed;
   
@@ -22,4 +23,12 @@ class enemy_ship{
    rect (ex,ey,20,20);
    
   }
+  
+  void lives_check(){
+  if (ey > height-50) {
+      lives.decrease(); 
+      resetEShips();
+  }
+}
+
 }

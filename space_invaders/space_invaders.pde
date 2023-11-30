@@ -11,7 +11,6 @@ lives lives;
 //milestone 2:
 //Skills that are done: 6,7,8,12,13,14,16,17,28,29,34,35
 //Skills that I'm not sure about: 21, 24, (I want to ask about 34 and 35 as well)
-//Ask about lives_check() function
 
 float space_check=0;
 int nstars = 3;
@@ -47,9 +46,10 @@ void draw() {
      
      play();
      stars();
-  
+     stroke(255);
+     
+    
   lives.display();
-  lives_check();
   
    }
 }
@@ -85,11 +85,13 @@ void play(){
   for (enemy_ship eship1 : eship1) {
     eship1.move();
     eship1.display();
+    eship1.lives_check();
   }
   
   for (enemy_ship eship2 : eship2) {
     eship2.move();
     eship2.display();
+    eship2.lives_check();
   }
   
 }
@@ -97,8 +99,9 @@ void resetEShips(){
    eship1 = new enemy_ship[15];
   for (int i = 0; i < eship1.length; i++){
     eship_x = i*30;
-    eship_speed = 20;
+    eship_speed = 5;
     eship1[i] = new enemy_ship(eship_x,eship_y1,eship_speed);
+   
     
     
   }
@@ -106,16 +109,8 @@ void resetEShips(){
   eship2 = new enemy_ship[15];
   for (int i = 0; i < eship2.length; i++){
     eship_x = i*30;
-    eship_speed = 20;
+    eship_speed = 5;
     eship2[i] = new enemy_ship(eship_x,eship_y2,eship_speed);
   } 
   
-}
-
-void lives_check(){
-  if (eship_y1 > height/2) {
-      //lives.decrease(); I'm not sure why this function is not working.
-      //resetEShips(); I think, this is happening because program thinks, that y coordinate is not moving, bacause when I'm changing > to < it's working.
-    println("test test");
-  }
 }
