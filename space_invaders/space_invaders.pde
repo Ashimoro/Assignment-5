@@ -7,6 +7,7 @@ lives lives;
 projectile projectile;
 win win;
 scoreboard score;
+particles particles;
 
 //Milestone 1:
 //skills that are done: 1, 2, 3, 4, 5, 9, 10, 11, 15, 18, 20, 30(player ship)
@@ -23,6 +24,7 @@ float eship_y2 = 40;
 float eship_x, eship_speed;
 
 ArrayList<projectile> proj = new ArrayList<projectile>();
+ArrayList<particles> part = new ArrayList<particles>();
 
 void setup() {
   size(600, 800);
@@ -47,6 +49,14 @@ void draw() {
    
    if(space_check == 1){
      background(0);
+     for (int i = part.size() - 1; i >= 0; i--) {
+       particles particles = part.get(i);
+       particles.update();
+       particles.display();
+         if (particles.end()) {
+           part.remove(i);  
+       }
+     }
      
      play();
      stars();
@@ -90,11 +100,11 @@ void stars(){
 
 
 void play(){
+    pship.move();
     grid.display();
     grid.move();
     grid.gridcolor();
     pship.display();
-    pship.move();
     
   
   for (int i = 0; i < eship1.length; i++) {
@@ -184,4 +194,8 @@ void lose(){
  if (lives.current == 0){
    space_check = 0;
  }
+}
+
+void engine(){
+ part.add(new particles(pship.pos));
 }

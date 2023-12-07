@@ -26,7 +26,7 @@ class player_ship{
       pos.x += 5;
     }
   }
-  
+  engine();
 }
 
   
