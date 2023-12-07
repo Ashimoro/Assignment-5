@@ -5,6 +5,7 @@ enemy_ship[] eship1;
 enemy_ship[] eship2;
 lives lives;
 projectile projectile;
+win win;
 //Milestone 1:
 //skills that are done: 1, 2, 3, 4, 5, 9, 10, 11, 15, 18, 20, 30(player ship)
 //skills that are not done:  30(enemy ships), 33(comet)
@@ -27,19 +28,17 @@ void setup() {
   
   
   starter_screen = new Starter();
+  win = new win();
   pship = new player_ship(width/2, height-50);
   grid = new grid (10,14,80);
   lives = new lives(3);
   
   resetEShips();
-
 }
 
 
 void draw() {
   noStroke();
-  
-  
    starter_screen.display();
    stars();
    
@@ -49,9 +48,9 @@ void draw() {
      play();
      stars();
      stroke(255);
-     
     
-  lives.display();
+     winscreen();
+     lives.display();
   
    }
 }
@@ -153,4 +152,23 @@ void resetEShips(){
     eship2[i] = new enemy_ship(eship_x,eship_y2,eship_speed);
   } 
   
+}
+
+void winscreen(){
+  boolean youwin = true;
+  for (int i = 0; i < eship1.length; i++) {
+    if (eship1[i] != null) {
+     youwin = false; 
+     break;
+    }
+  }  
+  for (int i = 0; i < eship2.length; i++) {
+    if (eship2[i] != null) {
+     youwin = false;
+     break;
+    }
+  }
+  if (youwin) {
+   win.display();
+  }
 }

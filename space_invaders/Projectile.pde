@@ -11,7 +11,6 @@ class projectile {
  
  void move(){
   py -= pspeed; 
-  println (123);
  }
  
  void display() {
