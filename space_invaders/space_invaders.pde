@@ -58,7 +58,7 @@ void draw() {
 
  
  void shoot() {
-  proj.add(new projectile(pship.x, pship.y));
+  proj.add(new projectile(pship.pos.x, pship.pos.y));
  }
 
 

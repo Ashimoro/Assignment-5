@@ -16,7 +16,7 @@ class projectile {
  
  void display() {
   fill(255,255,0);
-  rect(px,py,10,20);
+  rect(px-5,py,10,20);
  }
  
 boolean hit(enemy_ship eship) {

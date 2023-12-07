@@ -1,17 +1,16 @@
 class player_ship{
-  float x, y;
+  PVector pos;
   
   player_ship(float x, float y) {
-    this.x = x;
-    this.y = y;
+    pos = new PVector(x,y);
   }
   
   void display(){
     fill (255);
-    rect(x-15,y,30,30);  
+    rect(pos.x-15,pos.y,30,30);  
     
     
-  x = constrain(x, 30, width-30); 
+  pos.x = constrain(pos.x, 30, width-30); 
 
 }
   
@@ -22,9 +21,9 @@ class player_ship{
     
   if (keyPressed) {
     if (keyCode == LEFT) {
-      x -= 5;
+      pos.x -= 5;
     } else if (keyCode == RIGHT) {
-      x += 5;
+      pos.x += 5;
     }
   }
   
