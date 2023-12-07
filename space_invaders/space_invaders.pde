@@ -49,14 +49,6 @@ void draw() {
    
    if(space_check == 1){
      background(0);
-     for (int i = part.size() - 1; i >= 0; i--) {
-       particles particles = part.get(i);
-       particles.update();
-       particles.display();
-         if (particles.end()) {
-           part.remove(i);  
-       }
-     }
      
      play();
      stars();
@@ -100,12 +92,11 @@ void stars(){
 
 
 void play(){
-    pship.move();
     grid.display();
     grid.move();
     grid.gridcolor();
     pship.display();
-    
+    pship.move();
   
   for (int i = 0; i < eship1.length; i++) {
     if (eship1[i] != null) {
@@ -198,4 +189,12 @@ void lose(){
 
 void engine(){
  part.add(new particles(pship.pos));
+      for (int i = part.size() - 1; i >= 0; i--) {
+       particles particles = part.get(i);
+       particles.update();
+       particles.display();
+         if (particles.end()) {
+           part.remove(i);
+       }
+     }
 }

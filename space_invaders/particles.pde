@@ -9,15 +9,14 @@ class particles{
   
  void update(){
     pos.add(vel);
-    duration -=2;
+    duration -=15;
   }
   
  void display(){
    stroke(232,143,0, duration);
    strokeWeight(2);
    fill(232,143,0,duration);
-   ellipse(pos.x, pos.y, 5, 5);
-  // println(pos.x + " " + pos.y);
+   ellipse(pos.x, pos.y+30, 5, 5);
  }
  
  boolean end(){
