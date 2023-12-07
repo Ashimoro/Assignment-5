@@ -27,6 +27,7 @@ class enemy_ship{
   void lives_check(){
   if (ey > height-50) {
       lives.decrease(); 
+      score.addition(-2000);
       resetEShips();
   }
 }

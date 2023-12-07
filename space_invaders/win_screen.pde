@@ -1,5 +1,6 @@
 class win {
- void display(){
+
+  void display(){
   background(0,0,0);
    
   textAlign(CENTER);
@@ -8,5 +9,6 @@ class win {
   
   text("Congratulations", width/2, height/2);
   text("Victory is yours", width/2, height/2+25);
- }
+  
+  }
 }
