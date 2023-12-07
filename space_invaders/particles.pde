@@ -17,7 +17,7 @@ class particles{
    strokeWeight(2);
    fill(232,143,0,duration);
    ellipse(pos.x, pos.y, 5, 5);
-   println(pos.x + " " + pos.y);
+  // println(pos.x + " " + pos.y);
  }
  
  boolean end(){
