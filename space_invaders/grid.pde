@@ -1,7 +1,7 @@
 class grid{
   int gx,gy,gs;
   float x,y,posx,posy;
-  int gc = 255;
+  int gc = color(255,0,0);
   
   
   grid(int gx, int gy, int gs) {
