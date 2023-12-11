@@ -7,9 +7,11 @@ class player_ship{
   
   void display(){
     fill (255);
+    noStroke();
     rect(pos.x-15,pos.y,30,30);  
-    
-    
+    rect(pos.x-15,pos.y+5,-5,30);
+    rect(pos.x+15,pos.y+5,5,30);
+    rect(pos.x-10,pos.y+5,20,-10);
   pos.x = constrain(pos.x, 30, width-30); 
 
 }

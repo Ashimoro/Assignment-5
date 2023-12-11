@@ -21,6 +21,9 @@ class enemy_ship{
   void display() {
    fill (255,0,0);
    rect (ex,ey,20,20);
+   rect (ex,ey+15,-5,-20);
+   rect (ex+20,ey+15,5,-20);
+   
    
   }
   

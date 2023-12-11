@@ -1,3 +1,15 @@
+/*
+Description:
+
+References:
+
+Inventory skills:
+
+
+*/
+
+
+
 Starter starter_screen;
 player_ship pship;
 grid grid;
@@ -9,19 +21,12 @@ win win;
 scoreboard score;
 particles particles;
 
-//Milestone 1:
-//skills that are done: 1, 2, 3, 4, 5, 9, 10, 11, 15, 18, 20, 30(player ship)
-//skills that are not done:  30(enemy ships), 33(comet)
-
-//milestone 2:
-//Skills that are done: 6,7,8,12,13,14,16,17,28,29,34,35
-//Skills that I'm not sure about: 21, 24, (I want to ask about 34 and 35 as well)
-
 float space_check=0;
 int nstars = 3;
 float eship_y1 = 100; 
 float eship_y2 = 40;
 float eship_x, eship_speed;
+
 
 ArrayList<projectile> proj = new ArrayList<projectile>();
 ArrayList<particles> part = new ArrayList<particles>();
@@ -56,7 +61,7 @@ void draw() {
     
      lives.display();
      score.display();
-  
+     
      winscreen();
      lose();
    }
@@ -93,6 +98,7 @@ void stars(){
 
 void play(){
     grid.display();
+    moon();
     grid.move();
     grid.gridcolor();
     pship.display();
@@ -145,7 +151,7 @@ void play(){
 void resetEShips(){
    eship1 = new enemy_ship[15];
   for (int i = 0; i < eship1.length; i++){
-    eship_x = i*30;
+    eship_x = i*40;
     eship_speed = 5;
     eship1[i] = new enemy_ship(eship_x,eship_y1,eship_speed);
    
@@ -155,7 +161,7 @@ void resetEShips(){
   
   eship2 = new enemy_ship[15];
   for (int i = 0; i < eship2.length; i++){
-    eship_x = i*30;
+    eship_x = i*40;
     eship_speed = 5;
     eship2[i] = new enemy_ship(eship_x,eship_y2,eship_speed);
   } 
@@ -197,4 +203,11 @@ void engine(){
            part.remove(i);
        }
      }
+}
+
+
+void moon(){
+ fill(144,160,144,20);
+ noStroke();
+ ellipse(width/2,height,550,550); 
 }
