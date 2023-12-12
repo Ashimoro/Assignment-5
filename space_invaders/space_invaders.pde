@@ -3,6 +3,13 @@ Description:
 
 References:
 
+https://processing.org/reference
+
+https://youtu.be/_k_yRbUeVxY
+https://www.youtube.com/watch?v=RIdBGJbCIRE
+
+My father
+
 Inventory skills:
 
 
@@ -31,6 +38,7 @@ float eship_x, eship_speed;
 ArrayList<projectile> proj = new ArrayList<projectile>();
 ArrayList<particles> part = new ArrayList<particles>();
 
+//---------------------------------------------- CORE ----------------------------------------------
 void setup() {
   size(600, 800);
   frameRate(60);
@@ -67,35 +75,7 @@ void draw() {
    }
 }
 
- 
- void shoot() {
-  proj.add(new projectile(pship.pos.x, pship.pos.y));
- }
-
-
-void keyPressed() {
-  if (key == ' ') {
-    space_check = 1;
-  } else if (key == 'z') {
-    shoot();
-  }
-  
-}
-
-
-void stars(){
-  fill (255);
-  noStroke();
-  for (int i = 0; i < nstars; i++) {
-   float sx = random(width);
-   float sy = random(height);
-   float ssize = random(1,4);
-   
-   ellipse(sx,sy,ssize,ssize);
-  }
-}
-
-
+//---------------------------------------------- GAMEPLAY ----------------------------------------------
 void play(){
     grid.display();
     moon();
@@ -166,6 +146,34 @@ void resetEShips(){
     eship2[i] = new enemy_ship(eship_x,eship_y2,eship_speed);
   } 
   
+}
+
+void shoot() {
+  proj.add(new projectile(pship.pos.x, pship.pos.y));
+ }
+
+
+void keyPressed() {
+  if (key == ' ') {
+    space_check = 1;
+  } else if (key == 'z') {
+    shoot();
+  }
+  
+}
+
+//---------------------------------------------- VISUAL ----------------------------------------------
+
+void stars(){
+  fill (255);
+  noStroke();
+  for (int i = 0; i < nstars; i++) {
+   float sx = random(width);
+   float sy = random(height);
+   float ssize = random(1,4);
+   
+   ellipse(sx,sy,ssize,ssize);
+  }
 }
 
 void winscreen(){
