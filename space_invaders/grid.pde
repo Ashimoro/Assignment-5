@@ -1,3 +1,6 @@
+
+// this class is responsible for creating an infinite grid in the background, as well as changing its color
+
 class grid{
   int gx,gy,gs;
   float x,y,posx,posy;
@@ -7,15 +10,12 @@ class grid{
   grid(int gx, int gy, int gs) {
    this.gx = gx;
    this.gy = gy;
-   this.gs = gs;
-   this.x = 0;
-   this.y = 0;
-   
+   this.gs = gs; 
   }
   
   
   void display(){
-    for(int i1=0; i1<gx;i1++){
+    for(int i1=0; i1<gx;i1++){ // these loops create vertical and horizontal lines
        for(int i2=0;i2<gy;i2++){
          
          posx = i1*gs - 0.3;
@@ -31,16 +31,16 @@ class grid{
      }
   
   
-  void move(){
+  void move(){ // movement 
    y = y+2; 
    
-   if (y > gs) {
+   if (y > gs) { // checks if the grid is on the screen, and when it crosses a certain coordinate, it sends it up
     y = -80;
    }
   }
   
   
-      void gridcolor(){
+      void gridcolor(){ // This void is responsible for changing the color by pressing the numbers from 1 to 4.
     if (keyPressed) {
       switch(key) {
        case '1':

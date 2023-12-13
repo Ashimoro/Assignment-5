@@ -1,5 +1,8 @@
 enemy_ship eship;
 
+// this class is responsible for the bullets fired by the player
+// there are not only functions responsible for movement, but also for hitting.
+
 class projectile {
  float px,py;
  float pspeed = 10;

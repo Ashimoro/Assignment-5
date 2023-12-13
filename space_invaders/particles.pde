@@ -1,3 +1,6 @@
+
+// this class is responsible for the visual appearance and duration of the particles released by the player's ship
+
 class particles{
  PVector pos, vel;
  float duration = 255;
@@ -19,7 +22,7 @@ class particles{
    ellipse(pos.x, pos.y+30, 5, 5);
  }
  
- boolean end(){
+ boolean end(){ 
   return duration<0; 
  }
 }

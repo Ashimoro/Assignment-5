@@ -1,4 +1,7 @@
 lives lives2;
+
+// this class is responsible for the appearance of enemy ships, as well as for checking where they are located
+
 class enemy_ship{
   float ex,ey,espeed;
   

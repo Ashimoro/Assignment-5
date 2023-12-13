@@ -1,3 +1,6 @@
+
+// this class is responsible for displaying the player's current score and adding a point when the player hits an enemy ship.
+
 class scoreboard{
    int currentscore;
    
@@ -5,7 +8,7 @@ class scoreboard{
      currentscore = 0;
    }
    
-   void addition(int bonus){
+   void addition(int bonus){ 
      currentscore += bonus;
    }
    
