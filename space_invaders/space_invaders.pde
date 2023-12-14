@@ -32,31 +32,30 @@ Inventory skills:
 16. Lane 136
 17. Lane 18&19 in grid class
 18. Lane 48 in grid class
-19.
+19. A for loop is used when you know how many times you want to repeat command, and a while loop is used to repeat a command until certain conditions are met.
 20. Lane 271
 21. Lane 24 in projectile class
-22.
+22. Parameters are variables that we are using when declaring a function, and arguments are a values that are used inside of the function
 23. Didn't use
 24. Didn't use
-25.
-26.
-27.
+25. Classes are used to define an object
+26. A constructor function is a function inside of a class that creates the instance of the onject. 
+27. For organization 
 28. enemy ship class
 29. Lane 95
 30. Lane 8 in enemy ship class
-31.
-32.
+31. Array has a fixed size and a ArrayList can be as large is required
+32. We are going throught a array backwards to be able to remove items from the list
 33. Lane 180
 34. Late 86 and 87
 35. Lane 135
 36. Lane 161
-37.
-37.
+37. We should use PVector instead of a float variables when we want to simplify mathematical operations and physics
 38. Lane 5 in player particles class
 39. Lane 14 in pacticles class
 40. Didn't use
 41. Lane 10 in particles class
-42.
+42. Normalized vector is a vector with the consistent magnitude. It can be useful when we want to move something in a specific direction at a controlled speed
 43. I never used 2D Vector class before
 49. Lane 25 in projectile class
 
